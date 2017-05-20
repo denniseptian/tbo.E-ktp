@@ -1,7 +1,7 @@
 package datas;
 
 public class penduduk {
-	private String NIK;
+	private int NIK;
     private String Nama;
     private String TptLahir;
     private String TglLahir;
@@ -15,7 +15,7 @@ public class penduduk {
     private String Pekerjaan;
     private String Kwarganegaraan;
     
-    public penduduk(String NIK, String Nama, String TptLahir, String TglLahir, String JnsKelamin, String Alamat,
+    public penduduk(int NIK, String Nama, String TptLahir, String TglLahir, String JnsKelamin, String Alamat,
     		String Rt, String Desa, String Kecamatan, String Agama, String Status, String Pekerjaan, String Kwarganegaraan) {
         this.NIK = NIK;
         this.Nama = Nama;
@@ -32,10 +32,10 @@ public class penduduk {
         this.Kwarganegaraan = Kwarganegaraan;
     }
     
-	public String getNIK() {
+	public int getNIK() {
 		return NIK;
 	}
-	public void setNIK(String nIK) {
+	public void setNIK(int nIK) {
 		NIK = nIK;
 	}
 	public String getNama() {
