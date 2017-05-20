@@ -12,6 +12,8 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.table.DefaultTableModel;
 
+import datas.penduduk;
+
 public class FrameArrayList extends javax.swing.JFrame {
 
 	private JFrame frame;
