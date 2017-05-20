@@ -1,6 +1,7 @@
 package system;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import datas.penduduk;
 
@@ -23,6 +24,13 @@ public class InputDataPenduduk {
 
     public void deleteData(int index) { //method untuk menghapus data di ArrayList berdasarkan index Arraynya
     	listpenduduk.remove(index);
+    }
+    
+    public void dataShort(String by){
+    	HashMap<String, penduduk> pendudukMap = new HashMap<String, penduduk>();
+    	for (penduduk penduduck : listpenduduk) {
+    	   pendudukMap.put(penduduck.getNIK(), penduduck);
+    	}
     }
 
 }
