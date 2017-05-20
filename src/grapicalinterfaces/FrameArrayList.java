@@ -1,10 +1,12 @@
 package grapicalinterfaces;
 
+
 import java.awt.CardLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
@@ -23,6 +25,7 @@ import java.util.Enumeration;
 import java.awt.event.ActionEvent;
 
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 
 import datas.penduduk;
 import system.InputDataPenduduk;
@@ -113,13 +116,13 @@ public class FrameArrayList extends javax.swing.JFrame {
         modelpenduduk = new DefaultTableModel(objekpenduduk, namakolom);
         table.setModel(modelpenduduk);
     }
-	public final void viewDataTabelShort(){
+	public final void viewDataTabelShort(ArrayList<penduduk> array){
 		ArrayList<penduduk> data = new ArrayList<penduduk>();
 		data.addAll(datapenduduk.dataShort("nik"));
         String [] namakolom = {"NIK", "Nama", "Tempat Lahir", "Tanggal Lahir", "Jenis Kelamin", "Alamat", "RT/RW", "Desa", "Kecamatan", "Agama", "Status", "Pekerjaan", "Kwarganegaraan"};
         Object [] [] objekpenduduk = new Object[datapenduduk.getALL().size()] [12];
         int i = 0;
-        for (penduduk pdd: data) { 
+        for (penduduk pdd: array) { 
             String arrayPenduduk[] = {
                 pdd.getNIK(),
                 pdd.getNama(), 
@@ -141,6 +144,7 @@ public class FrameArrayList extends javax.swing.JFrame {
         modelpenduduk = new DefaultTableModel(objekpenduduk, namakolom);
         table.setModel(modelpenduduk);
     }
+	
  
     public void ClearTextField(){
     	textFieldNik.setText("");
@@ -194,15 +198,40 @@ public class FrameArrayList extends javax.swing.JFrame {
 		scrollPane.setBounds(0, 0, 893, 370);
 		panel1.add(scrollPane);
 		
+		table.addMouseListener(new java.awt.event.MouseAdapter() {
+		    @Override
+		    public void mouseClicked(java.awt.event.MouseEvent e) {
+		       //int row = table.rowAtPoint(e.getPoint());
+		        int column = table.columnAtPoint(e.getPoint());
+		        if (column == 0 ) {
+		        	ArrayList<penduduk> data = new ArrayList<penduduk>();
+					
+					data.addAll(datapenduduk.dataShort("nik"));
+					
+					viewDataTabelShort(data);
+		        }else if(column == 1){
+		        	ArrayList<penduduk> data = new ArrayList<penduduk>();
+					
+					data.addAll(datapenduduk.dataShort("nama"));
+					
+					viewDataTabelShort(data);
+		        }else if(column == 2){
+		        	ArrayList<penduduk> data = new ArrayList<penduduk>();
+					
+					data.addAll(datapenduduk.dataShort("tempatlahir"));
+					
+					viewDataTabelShort(data);
+		        }
+		        System.out.println(column);
+		    }
+		    
+		});
+		
 		JButton btnShort = new JButton("Short");
 		btnShort.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				ArrayList<penduduk> data = new ArrayList<penduduk>();
-				
-				data.addAll(datapenduduk.dataShort("nama"));
-				
-				viewDataTabelShort();
+				JOptionPane.showMessageDialog(null, "Anda dapat shorting dengan klick tabelnya");
 			}
 		});
 		btnShort.setBounds(260, 381, 89, 23);
