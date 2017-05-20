@@ -1,6 +1,7 @@
 package ktp;
 
 import datas.penduduk;
+import system.InputDataPenduduk;
 
 public class MainPenduduk {
 	public static void main(String[] args) {
