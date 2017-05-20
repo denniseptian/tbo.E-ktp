@@ -1,275 +1,340 @@
-//package grapicalinterfaces;
-//
-//import java.awt.EventQueue;
-//
-//import javax.swing.JFrame;
-//import javax.swing.JLabel;
-//import javax.swing.JTextField;
-//import javax.swing.JButton;
-//import javax.swing.JTable;
-//import java.awt.event.ActionListener;
-//import java.awt.event.ActionEvent;
-//
-//import javax.swing.table.DefaultTableModel;
-//
-//import datas.penduduk;
-//import system.InputDataPenduduk;
-//
-//public class FrameArrayList extends javax.swing.JFrame {
-//
-//	private JFrame frame;
-//	private JTextField textField;
-//	private JTextField textField_1;
-//	private JTextField textField_2;
-//	private JTextField textField_3;
-//	private JTextField textField_4;
-//	private JTextField textField_5;
-//	private JTextField textField_6;
-//	private JTextField textField_7;
-//	private JTextField textField_8;
-//	private JTextField textField_9;
-//	private JTextField textField_10;
-//	private JTextField textField_11;
-//	private JTextField textField_12;
-//	private JTable table;
-//
-//	/**
-//	 * Launch the application.
-//	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					FrameArrayList window = new FrameArrayList();
-//					window.frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
-//
-//	/**
-//	 * Create the application.
-//	 */
-//	
-//	DefaultTableModel modelpenduduk;
-//	InputDataPenduduk datapenduduk;
-//	
-//	public FrameArrayList() {
-//		initialize();
-////		initComponents();
-//		datapenduduk = new InputDataPenduduk();
-//		viewDataTabel();
-//	}
-//	
-//	public final void viewDataTabel(){
-//        String [] namakolom = {"NIM", "Nama", "Tempat Lahir", "Tanggal Lahir", "Jenis Kelamin", "Alamat", "RT/RW", "Desa", "Kecamatan", "Agama", "Status", "Pekerjaan", "Kwarganegaraan"};
-//        Object [] [] objekpenduduk = new Object[datapenduduk.getALL().size()] [12];
-//        int i = 0;
-//        for (penduduk pdd: datapenduduk.getALL()) { 
-//            String arrayPenduduk[] = {
-//                pdd.getNIK(),
-//                pdd.getNama(), 
-//                pdd.getTptLahir(),
-//                pdd.getTglLahir(),
-//                pdd.getJnsKelamin(), 
-//                pdd.getAlamat(),
-//                pdd.getRt(),
-//                pdd.getDesa(), 
-//                pdd.getKecamatan(),
-//                pdd.getAgama(),
-//                pdd.getStatus(), 
-//                pdd.getPekerjaan(),
-//                pdd.getKwarganegaraan()
-//            };
-//            objekpenduduk[i] = arrayPenduduk;
-//            i++;
-//        }
-//        modelpenduduk = new DefaultTableModel(objekpenduduk, namakolom);
-//        table.setModel(modelpenduduk);
-//    }
-// 
-//    public void ClearTextField(){
-//    	textField.setText("");
-//    	textField_1.setText("");
-//        textField_2.setText("");
-//        textField_3.setText("");
-//        textField_4.setText("");
-//        textField_5.setText("");
-//        textField_6.setText("");
-//        textField_7.setText("");
-//        textField_8.setText("");
-//        textField_9.setText("");
-//        textField_10.setText("");
-//        textField_11.setText("");
-//        textField_12.setText("");
-//    }
-//	
-//
-//	/**
-//	 * Initialize the contents of the frame.
-//	 */
-//	private void initialize() {
-//		frame = new JFrame();
-//		frame.setBounds(100, 100, 909, 754);
-//		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		frame.getContentPane().setLayout(null);
-//		
-//		JLabel lblNik = new JLabel("NIK");
-//		lblNik.setBounds(50, 53, 46, 14);
-//		frame.getContentPane().add(lblNik);
-//		
-//		JLabel lblNama = new JLabel("Nama");
-//		lblNama.setBounds(50, 78, 46, 14);
-//		frame.getContentPane().add(lblNama);
-//		
-//		JLabel lblTempatLahir = new JLabel("Tempat Lahir");
-//		lblTempatLahir.setBounds(50, 103, 85, 14);
-//		frame.getContentPane().add(lblTempatLahir);
-//		
-//		JLabel lblTanggalLahir = new JLabel("Tanggal Lahir");
-//		lblTanggalLahir.setBounds(50, 126, 64, 14);
-//		frame.getContentPane().add(lblTanggalLahir);
-//		
-//		JLabel lblJenisKelamin = new JLabel("Jenis Kelamin");
-//		lblJenisKelamin.setBounds(50, 151, 64, 14);
-//		frame.getContentPane().add(lblJenisKelamin);
-//		
-//		JLabel lblAlamat = new JLabel("Alamat");
-//		lblAlamat.setBounds(50, 176, 64, 14);
-//		frame.getContentPane().add(lblAlamat);
-//		
-//		JLabel lblRtrw = new JLabel("RT/RW");
-//		lblRtrw.setBounds(50, 201, 64, 14);
-//		frame.getContentPane().add(lblRtrw);
-//		
-//		JLabel lblDesa = new JLabel("Desa");
-//		lblDesa.setBounds(50, 226, 64, 14);
-//		frame.getContentPane().add(lblDesa);
-//		
-//		JLabel lblKecamatan = new JLabel("Kecamatan");
-//		lblKecamatan.setBounds(50, 251, 64, 14);
-//		frame.getContentPane().add(lblKecamatan);
-//		
-//		JLabel lblAgama = new JLabel("Agama");
-//		lblAgama.setBounds(50, 276, 64, 14);
-//		frame.getContentPane().add(lblAgama);
-//		
-//		JLabel lblStatus = new JLabel("Status");
-//		lblStatus.setBounds(50, 301, 64, 14);
-//		frame.getContentPane().add(lblStatus);
-//		
-//		JLabel lblPekerjaan = new JLabel("Pekerjaan");
-//		lblPekerjaan.setBounds(50, 326, 64, 14);
-//		frame.getContentPane().add(lblPekerjaan);
-//		
-//		JLabel lblKewarganegaraan = new JLabel("Kewarganegaraan");
-//		lblKewarganegaraan.setBounds(50, 351, 104, 14);
-//		frame.getContentPane().add(lblKewarganegaraan);
-//		
-//		textField = new JTextField();
-//		textField.setBounds(195, 50, 231, 20);
-//		frame.getContentPane().add(textField);
-//		textField.setColumns(10);
-//		
-//		textField_1 = new JTextField();
-//		textField_1.setColumns(10);
-//		textField_1.setBounds(195, 75, 231, 20);
-//		frame.getContentPane().add(textField_1);
-//		
-//		textField_2 = new JTextField();
-//		textField_2.setColumns(10);
-//		textField_2.setBounds(195, 100, 231, 20);
-//		frame.getContentPane().add(textField_2);
-//		
-//		textField_3 = new JTextField();
-//		textField_3.setColumns(10);
-//		textField_3.setBounds(195, 123, 231, 20);
-//		frame.getContentPane().add(textField_3);
-//		
-//		textField_4 = new JTextField();
-//		textField_4.setColumns(10);
-//		textField_4.setBounds(195, 148, 231, 20);
-//		frame.getContentPane().add(textField_4);
-//		
-//		textField_5 = new JTextField();
-//		textField_5.setColumns(10);
-//		textField_5.setBounds(195, 173, 231, 20);
-//		frame.getContentPane().add(textField_5);
-//		
-//		textField_6 = new JTextField();
-//		textField_6.setColumns(10);
-//		textField_6.setBounds(195, 198, 231, 20);
-//		frame.getContentPane().add(textField_6);
-//		
-//		textField_7 = new JTextField();
-//		textField_7.setColumns(10);
-//		textField_7.setBounds(195, 223, 231, 20);
-//		frame.getContentPane().add(textField_7);
-//		
-//		textField_8 = new JTextField();
-//		textField_8.setColumns(10);
-//		textField_8.setBounds(195, 248, 231, 20);
-//		frame.getContentPane().add(textField_8);
-//		
-//		textField_9 = new JTextField();
-//		textField_9.setColumns(10);
-//		textField_9.setBounds(195, 273, 231, 20);
-//		frame.getContentPane().add(textField_9);
-//		
-//		textField_10 = new JTextField();
-//		textField_10.setColumns(10);
-//		textField_10.setBounds(195, 298, 231, 20);
-//		frame.getContentPane().add(textField_10);
-//		
-//		textField_11 = new JTextField();
-//		textField_11.setColumns(10);
-//		textField_11.setBounds(195, 323, 231, 20);
-//		frame.getContentPane().add(textField_11);
-//		
-//		textField_12 = new JTextField();
-//		textField_12.setColumns(10);
-//		textField_12.setBounds(195, 348, 231, 20);
-//		frame.getContentPane().add(textField_12);
-//		
-//		JButton btnSimpan = new JButton("SIMPAN");
-//		btnSimpan.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				datapenduduk.insertData(
-//						textField.getText(),
-//						textField_1.getText(),
-//						textField_2.getText(),
-//						textField_3.getText(),
-//						textField_4.getText(),
-//						textField_5.getText(),
-//						textField_6.getText(),
-//						textField_7.getText(),
-//						textField_8.getText(),
-//						textField_9.getText(),
-//						textField_10.getText(),
-//						textField_11.getText(),
-//						textField_12.getText()
-//						);
-//				viewDataTabel();
-//				ClearTextField();
-//			}
-//		});
-//		btnSimpan.setBounds(100, 420, 89, 23);
-//		frame.getContentPane().add(btnSimpan);
-//		
-//		JButton btnHapus = new JButton("HAPUS");
-//		btnHapus.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				datapenduduk.deleteData(table.getSelectedRow());
-//				viewDataTabel();
-//			}
-//		});
-//		btnHapus.setBounds(275, 420, 89, 23);
-//		frame.getContentPane().add(btnHapus);
-//		
-//		table = new JTable();
-//		table.setBounds(50, 468, 793, 236);
-//		frame.getContentPane().add(table);
-//	}
-//}
+package grapicalinterfaces;
+
+import java.awt.CardLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
+import javax.swing.AbstractButton;
+import javax.swing.ButtonGroup;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import java.awt.event.ActionListener;
+import java.util.Enumeration;
+import java.awt.event.ActionEvent;
+
+import javax.swing.table.DefaultTableModel;
+
+import datas.penduduk;
+import system.InputDataPenduduk;
+
+public class FrameArrayList extends javax.swing.JFrame {
+
+	private JFrame frame;
+	private JPanel panel2;
+	private JPanel panel1;
+	private JTextField textFieldNik;
+	private JTextField textFieldNama;
+	private JTextField textFieldTmptLahir;
+	private JTextField textFieldTglLahir;
+	//private JTextField textField_4;
+	private String jenisKelamin;
+	private JTextField textFieldRtRw;
+	private JTextField textFieldDesa;
+	private JTextField textFieldKecamatan;
+	private JComboBox comboBoxAgama;
+	private JComboBox comboBoxStts;
+	private JComboBox comboBoxPkerjaan;
+	private JComboBox comboBoxKwarga;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+				        if ("Nimbus".equals(info.getName())) {
+				            UIManager.setLookAndFeel(info.getClassName());
+				            break;
+				        }
+				    }
+					
+					FrameArrayList window = new FrameArrayList();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	
+	DefaultTableModel modelpenduduk;
+	InputDataPenduduk datapenduduk;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private JTextField textFieldAlamat;
+	private JTable table_1;
+	
+	public FrameArrayList() {
+		initialize();
+//		initComponents();
+		datapenduduk = new InputDataPenduduk();
+		viewDataTabel();
+	}
+	
+	public final void viewDataTabel(){
+        String [] namakolom = {"NIK", "Nama", "Tempat Lahir", "Tanggal Lahir", "Jenis Kelamin", "Alamat", "RT/RW", "Desa", "Kecamatan", "Agama", "Status", "Pekerjaan", "Kwarganegaraan"};
+        Object [] [] objekpenduduk = new Object[datapenduduk.getALL().size()] [12];
+        int i = 0;
+        for (penduduk pdd: datapenduduk.getALL()) { 
+            String arrayPenduduk[] = {
+                pdd.getNIK(),
+                pdd.getNama(), 
+                pdd.getTptLahir(),
+                pdd.getTglLahir(),
+                pdd.getJnsKelamin(), 
+                pdd.getAlamat(),
+                pdd.getRt(),
+                pdd.getDesa(), 
+                pdd.getKecamatan(),
+                pdd.getAgama(),
+                pdd.getStatus(), 
+                pdd.getPekerjaan(),
+                pdd.getKwarganegaraan()
+            };
+            objekpenduduk[i] = arrayPenduduk;
+            i++;
+        }
+        modelpenduduk = new DefaultTableModel(objekpenduduk, namakolom);
+        table.setModel(modelpenduduk);
+    }
+ 
+    public void ClearTextField(){
+    	textFieldNik.setText("");
+    	textFieldNama.setText("");
+        textFieldTmptLahir.setText("");
+        textFieldTglLahir.setText("");
+        textFieldAlamat.setText("");
+        textFieldRtRw.setText("");
+        textFieldDesa.setText("");
+        textFieldKecamatan.setText("");
+    }
+	
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 909, 462);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(new CardLayout(0, 0));
+		
+		panel1 = new JPanel();
+		frame.getContentPane().add(panel1, "name_38676190739508");
+		
+		JButton btnPnanel = new JButton("Panel 1");
+		btnPnanel.setBounds(44, 381, 89, 23);
+		btnPnanel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panel1.setVisible(false);
+				panel2.setVisible(true);
+			}
+		});
+		panel1.setLayout(null);
+		panel1.add(btnPnanel);
+		
+		JButton btnHapus = new JButton("HAPUS");
+		btnHapus.setBounds(161, 381, 89, 23);
+		panel1.add(btnHapus);
+		btnHapus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				datapenduduk.deleteData(table.getSelectedRow());
+				viewDataTabel();
+			}
+		});
+		
+		table = new JTable();
+		table.setColumnSelectionAllowed(true);
+		//panel2.add(table);
+		JScrollPane scrollPane = new JScrollPane(table);
+		scrollPane.setBounds(0, 0, 893, 370);
+		panel1.add(scrollPane);
+		
+		panel2 = new JPanel();
+		frame.getContentPane().add(panel2, "name_38676174320609");
+		panel2.setLayout(null);
+		
+		JLabel lblNik = new JLabel("NIK");
+		lblNik.setBounds(31, 52, 46, 14);
+		panel2.add(lblNik);
+		
+		JLabel lblNama = new JLabel("Nama");
+		lblNama.setBounds(31, 84, 46, 14);
+		panel2.add(lblNama);
+		
+		textFieldNama = new JTextField();
+		textFieldNama.setBounds(134, 80, 231, 23);
+		panel2.add(textFieldNama);
+		textFieldNama.setColumns(10);
+		
+		JLabel lblTempatLahir = new JLabel("Tempat Lahir");
+		lblTempatLahir.setBounds(31, 118, 104, 14);
+		panel2.add(lblTempatLahir);
+		
+		textFieldTmptLahir = new JTextField();
+		textFieldTmptLahir.setBounds(134, 114, 231, 23);
+		panel2.add(textFieldTmptLahir);
+		textFieldTmptLahir.setColumns(10);
+		
+		JLabel lblTanggalLahir = new JLabel("Tanggal Lahir");
+		lblTanggalLahir.setBounds(31, 149, 104, 14);
+		panel2.add(lblTanggalLahir);
+		
+		textFieldTglLahir = new JTextField();
+		textFieldTglLahir.setBounds(134, 145, 231, 23);
+		panel2.add(textFieldTglLahir);
+		textFieldTglLahir.setColumns(10);
+		
+		JLabel lblJenisKelamin = new JLabel("Jenis Kelamin");
+		lblJenisKelamin.setBounds(31, 194, 104, 14);
+		panel2.add(lblJenisKelamin);
+		
+		JLabel lblAlamat = new JLabel("Alamat");
+		lblAlamat.setBounds(31, 240, 64, 14);
+		panel2.add(lblAlamat);
+		
+		textFieldAlamat = new JTextField();
+		textFieldAlamat.setBounds(134, 236, 231, 23);
+		panel2.add(textFieldAlamat);
+		textFieldAlamat.setColumns(10);
+		
+		JLabel lblRtrw = new JLabel("RT/RW");
+		lblRtrw.setBounds(31, 274, 46, 14);
+		panel2.add(lblRtrw);
+		
+		textFieldRtRw = new JTextField();
+		textFieldRtRw.setBounds(134, 270, 231, 23);
+		panel2.add(textFieldRtRw);
+		textFieldRtRw.setColumns(10);
+		
+		textFieldDesa = new JTextField();
+		textFieldDesa.setBounds(134, 304, 231, 23);
+		panel2.add(textFieldDesa);
+		textFieldDesa.setColumns(10);
+		
+		textFieldKecamatan = new JTextField();
+		textFieldKecamatan.setBounds(134, 336, 231, 23);
+		panel2.add(textFieldKecamatan);
+		textFieldKecamatan.setColumns(10);
+		
+		JLabel lblAgama = new JLabel("Agama");
+		lblAgama.setBounds(504, 52, 64, 14);
+		panel2.add(lblAgama);
+		
+		comboBoxAgama = new JComboBox();
+		comboBoxAgama.setBounds(620, 48, 231, 23);
+		panel2.add(comboBoxAgama);
+		comboBoxAgama.setModel(new DefaultComboBoxModel(new String[] {"Islam", "Kristen", "Hindu"}));
+		
+		JLabel lblStatus = new JLabel("Status");
+		lblStatus.setBounds(504, 84, 64, 14);
+		panel2.add(lblStatus);
+		
+		comboBoxStts = new JComboBox();
+		comboBoxStts.setBounds(620, 84, 231, 23);
+		panel2.add(comboBoxStts);
+		comboBoxStts.setModel(new DefaultComboBoxModel(new String[] {"Menikah", "Belum Menikah"}));
+		
+		JLabel lblPekerjaan = new JLabel("Pekerjaan");
+		lblPekerjaan.setBounds(504, 118, 64, 14);
+		panel2.add(lblPekerjaan);
+		
+		comboBoxPkerjaan= new JComboBox();
+		comboBoxPkerjaan.setBounds(620, 118, 231, 23);
+		panel2.add(comboBoxPkerjaan);
+		comboBoxPkerjaan.setModel(new DefaultComboBoxModel(new String[] {"Belum/Tidak Bekerja", "Mengurus Rumah Tangga", "Pelajar/Mahasiswa", "Karyawan", "Pensiunan", "Pegawai Negeri Sipil", "Pedagang", "Perangkat Desa", "Wiraswasta"}));
+		
+		JLabel lblKewarganegaraan = new JLabel("Kewarganegaraan");
+		lblKewarganegaraan.setBounds(504, 156, 104, 14);
+		panel2.add(lblKewarganegaraan);
+		
+		comboBoxKwarga = new JComboBox();
+		comboBoxKwarga.setBounds(620, 152, 231, 23);
+		panel2.add(comboBoxKwarga);
+		comboBoxKwarga.setModel(new DefaultComboBoxModel(new String[] {"Warga Negara Indonesia", "Warga Negara Asing"}));
+		
+		JButton btnSimpan = new JButton("SIMPAN");
+		btnSimpan.setBounds(506, 240, 129, 101);
+		panel2.add(btnSimpan);
+		
+		JRadioButton rdbtnLakilaki = new JRadioButton("Laki-Laki");
+		rdbtnLakilaki.setBounds(134, 190, 85, 23);
+		panel2.add(rdbtnLakilaki);
+		buttonGroup.add(rdbtnLakilaki);
+		
+		JRadioButton rdbtnPerempuan = new JRadioButton("Perempuan");
+		rdbtnPerempuan.setBounds(243, 190, 109, 23);
+		panel2.add(rdbtnPerempuan);
+		buttonGroup.add(rdbtnPerempuan);
+		
+		JLabel lblDesa = new JLabel("Desa");
+		lblDesa.setBounds(31, 308, 46, 14);
+		panel2.add(lblDesa);
+		
+		JLabel lblKecamatan = new JLabel("Kecamatan");
+		lblKecamatan.setBounds(31, 340, 64, 14);
+		panel2.add(lblKecamatan);
+		
+		textFieldNik = new JTextField();
+		textFieldNik.setBounds(134, 48, 231, 23);
+		panel2.add(textFieldNik);
+		textFieldNik.setColumns(10);
+		
+		JButton btnPanel = new JButton("Panel 2");
+		btnPanel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				panel2.setVisible(false);
+				panel1.setVisible(true);
+			}
+		});
+		btnPanel.setBounds(662, 236, 89, 23);
+		panel2.add(btnPanel);
+		btnSimpan.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Enumeration<AbstractButton> btn = buttonGroup.getElements();
+				while(btn.hasMoreElements()){
+					JRadioButton jrd = (JRadioButton) btn.nextElement();
+					if(jrd.isSelected()){
+						jenisKelamin = jrd.getText().toString();
+						//JOptionPane.showMessageDialog(null, jenisKelamin+"\n"+comboBoxAgama.getSelectedItem().toString()+comboBoxStts.getSelectedItem().toString());
+					}
+				}
+
+				datapenduduk.insertData(
+						textFieldNik.getText(),
+						textFieldNama.getText(),
+						textFieldTmptLahir.getText(),
+						textFieldTglLahir.getText(),
+						jenisKelamin,
+						textFieldAlamat.getText(),
+						textFieldRtRw.getText(),
+						textFieldDesa.getText(),
+						textFieldKecamatan.getText(),
+						comboBoxAgama.getSelectedItem().toString(),
+						comboBoxStts.getSelectedItem().toString(),
+						comboBoxPkerjaan.getSelectedItem().toString(),
+						//comboBoxPkerjaan.getSelectedItem().toString()
+						comboBoxKwarga.getSelectedItem().toString()
+						);
+				viewDataTabel();
+				ClearTextField();
+			}
+		});
+		
+	}
+}

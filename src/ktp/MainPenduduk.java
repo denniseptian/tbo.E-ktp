@@ -18,23 +18,23 @@ public class MainPenduduk {
 		HashMap masyarakat = new HashMap();
 
 		masyarakat.put("Mudafiq Riyan Pratama",
-				new penduduk(7560242, "Rudafiq Riyan Pratama", "Jember", "07560242", "Mudafiq Riyan Pratama", "Jember",
+				new penduduk("7560242", "Rudafiq Riyan Pratama", "Jember", "07560242", "Mudafiq Riyan Pratama", "Jember",
 						"07560242", "Mudafiq Riyan Pratama", "Jember", "07560242", "Mudafiq Riyan Pratama", "Jember",
 						"07560242"));
 		masyarakat.put("Mudafiq Riyan Pratama",
-				new penduduk(7530242, "Mudafiq Riyan Pratama one", "Jember", "07560242", "Mudafiq Riyan Pratama",
+				new penduduk("7530242", "Mudafiq Riyan Pratama one", "Jember", "07560242", "Mudafiq Riyan Pratama",
 						"Jember", "07560242", "Mudafiq Riyan Pratama", "Jember", "07560242", "Mudafiq Riyan Pratama",
 						"Jember", "07560242"));
 		masyarakat.put("Mudafiq Riyan Pratama",
-				new penduduk(7550242, "Gudafiq Riyan Pratama two", "Jember", "07560242", "Mudafiq Riyan Pratama",
+				new penduduk("7550242", "Gudafiq Riyan Pratama two", "Jember", "07560242", "Mudafiq Riyan Pratama",
 						"Jember", "07560242", "Mudafiq Riyan Pratama", "Jember", "07560242", "Mudafiq Riyan Pratama",
 						"Jember", "07560242"));
 		masyarakat.put("Mudafiq Riyan Pratama",
-				new penduduk(7570242, "Mudddfiq Riyan Pratama thre", "Jember", "07560242", "Mudafiq Riyan Pratama",
+				new penduduk("7570242", "Mudddfiq Riyan Pratama thre", "Jember", "07560242", "Mudafiq Riyan Pratama",
 						"Jember", "07560242", "Mudafiq Riyan Pratama", "Jember", "07560242", "Mudafiq Riyan Pratama",
 						"Jember", "07560242"));
 		masyarakat.put("Mudafiq Riyan Pratama",
-				new penduduk(180242, "Sudafiq Riyan Pratama four", "Jember", "07560242", "Mudafiq Riyan Pratama",
+				new penduduk("180242", "Sudafiq Riyan Pratama four", "Jember", "07560242", "Mudafiq Riyan Pratama",
 						"Jember", "07560242", "Mudafiq Riyan Pratama", "Jember", "07560242", "Mudafiq Riyan Pratama",
 						"Jember", "07560242"));
 
@@ -68,10 +68,10 @@ public class MainPenduduk {
 			System.out.println(k + " " + ((penduduk) masyarakat.get(k)).getNama());
 		}
 
-		input.insertData(07560242, "Mudafiq Riyan Pratama", "Jember", "07560242", "Mudafiq Riyan Pratama", "Jember",
+		input.insertData("07560242", "Mudafiq Riyan Pratama", "Jember", "07560242", "Mudafiq Riyan Pratama", "Jember",
 				"07560242", "Mudafiq Riyan Pratama", "Jember", "07560242", "Mudafiq Riyan Pratama", "Jember",
 				"07560242"); // menginputkan data dalam index 0
-		input.insertData(07560243, "Andre Chrissandhy", "Sidoarjo", "07560242", "Mudafiq Riyan Pratama", "Jember",
+		input.insertData("07560243", "Andre Chrissandhy", "Sidoarjo", "07560242", "Mudafiq Riyan Pratama", "Jember",
 				"07560242", "Mudafiq Riyan Pratama", "Jember", "07560242", "Mudafiq Riyan Pratama", "Jember",
 				"07560242"); // menginputkan data dalam index 1
 		// setelah input data, berarti data telah masuk dalam ArrayList
