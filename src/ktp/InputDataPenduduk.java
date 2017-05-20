@@ -2,6 +2,8 @@ package ktp;
 
 import java.util.ArrayList;
 
+import datas.penduduk;
+
 public class InputDataPenduduk {
 	ArrayList<penduduk> listpenduduk; //variabel listmahasiswa bertipe ArrayList
 

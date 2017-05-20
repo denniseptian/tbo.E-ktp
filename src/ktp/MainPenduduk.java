@@ -1,5 +1,7 @@
 package ktp;
 
+import datas.penduduk;
+
 public class MainPenduduk {
 	public static void main(String[] args) {
 		InputDataPenduduk input = new InputDataPenduduk();
