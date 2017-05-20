@@ -18,6 +18,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.awt.event.ActionEvent;
 
@@ -112,6 +113,34 @@ public class FrameArrayList extends javax.swing.JFrame {
         modelpenduduk = new DefaultTableModel(objekpenduduk, namakolom);
         table.setModel(modelpenduduk);
     }
+	public final void viewDataTabelShort(){
+		ArrayList<penduduk> data = new ArrayList<penduduk>();
+		data.addAll(datapenduduk.dataShort("nik"));
+        String [] namakolom = {"NIK", "Nama", "Tempat Lahir", "Tanggal Lahir", "Jenis Kelamin", "Alamat", "RT/RW", "Desa", "Kecamatan", "Agama", "Status", "Pekerjaan", "Kwarganegaraan"};
+        Object [] [] objekpenduduk = new Object[datapenduduk.getALL().size()] [12];
+        int i = 0;
+        for (penduduk pdd: data) { 
+            String arrayPenduduk[] = {
+                pdd.getNIK(),
+                pdd.getNama(), 
+                pdd.getTptLahir(),
+                pdd.getTglLahir(),
+                pdd.getJnsKelamin(), 
+                pdd.getAlamat(),
+                pdd.getRt(),
+                pdd.getDesa(), 
+                pdd.getKecamatan(),
+                pdd.getAgama(),
+                pdd.getStatus(), 
+                pdd.getPekerjaan(),
+                pdd.getKwarganegaraan()
+            };
+            objekpenduduk[i] = arrayPenduduk;
+            i++;
+        }
+        modelpenduduk = new DefaultTableModel(objekpenduduk, namakolom);
+        table.setModel(modelpenduduk);
+    }
  
     public void ClearTextField(){
     	textFieldNik.setText("");
@@ -164,6 +193,20 @@ public class FrameArrayList extends javax.swing.JFrame {
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setBounds(0, 0, 893, 370);
 		panel1.add(scrollPane);
+		
+		JButton btnShort = new JButton("Short");
+		btnShort.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				ArrayList<penduduk> data = new ArrayList<penduduk>();
+				
+				data.addAll(datapenduduk.dataShort("nama"));
+				
+				viewDataTabelShort();
+			}
+		});
+		btnShort.setBounds(260, 381, 89, 23);
+		panel1.add(btnShort);
 		
 		panel2 = new JPanel();
 		frame.getContentPane().add(panel2, "name_38676174320609");
