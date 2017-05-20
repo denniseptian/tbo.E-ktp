@@ -1,7 +1,10 @@
 package system;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 
 import datas.penduduk;
 
@@ -26,11 +29,35 @@ public class InputDataPenduduk {
     	listpenduduk.remove(index);
     }
     
-    public void dataShort(String by){
+    public List<penduduk> dataShort(String by){
     	HashMap<String, penduduk> pendudukMap = new HashMap<String, penduduk>();
     	for (penduduk penduduck : listpenduduk) {
     	   pendudukMap.put(penduduck.getNIK(), penduduck);
     	}
+    	
+    	List<penduduk> value = new ArrayList<penduduk>();
+    	value.addAll(pendudukMap.values());
+    	if(by.equals("nik")){
+    		Collections.sort(value, new Comparator<penduduk>() {
+
+    			@Override
+    			public int compare(penduduk o1, penduduk o2) {
+    				// TODO Auto-generated method stub
+    				return o1.getNIK().compareTo(o2.getNIK());
+    			}
+    		});
+    	}else if(by.equals("nama")){
+    		Collections.sort(value, new Comparator<penduduk>() {
+
+				@Override
+				public int compare(penduduk o1, penduduk o2) {
+					// TODO Auto-generated method stub
+					return o1.getNama().compareTo(o2.getNama());
+				}
+			});
+    	}
+    	return value;
+    	
     }
 
 }
