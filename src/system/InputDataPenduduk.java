@@ -43,7 +43,7 @@ public class InputDataPenduduk {
     			@Override
     			public int compare(penduduk o1, penduduk o2) {
     				// TODO Auto-generated method stub
-    				return o1.getNIK().compareTo(o2.getNIK());
+    				return Integer.parseInt(o1.getNIK()) - Integer.parseInt(o2.getNIK());
     			}
     		});
     	}else if(by.equals("nama")){
@@ -52,7 +52,16 @@ public class InputDataPenduduk {
 				@Override
 				public int compare(penduduk o1, penduduk o2) {
 					// TODO Auto-generated method stub
-					return o1.getNama().compareTo(o2.getNama());
+					return o1.getNama().toString().compareTo(o2.getNama().toString());
+				}
+			});
+    	}else if(by.equals("tempatlahir")){
+    		Collections.sort(value, new Comparator<penduduk>() {
+
+				@Override
+				public int compare(penduduk o1, penduduk o2) {
+					// TODO Auto-generated method stub
+					return o1.getTptLahir().toString().compareTo(o2.getTptLahir().toString());
 				}
 			});
     	}
